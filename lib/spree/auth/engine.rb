@@ -25,10 +25,10 @@ module Spree
       end
 
       def self.prepare_backend
-        Rails.application.config.assets.precompile += %w[
-          lib/assets/javascripts/spree/backend/solidus_auth.js
-          lib/assets/javascripts/spree/backend/solidus_auth.css
-        ]
+        # Rails.application.config.assets.precompile += %w[
+        #   lib/assets/javascripts/spree/backend/solidus_auth.js
+        #   lib/assets/javascripts/spree/backend/solidus_auth.css
+        # ]
 
         Dir.glob(File.join(File.dirname(__FILE__), "../../controllers/backend/*/*/*_decorator*.rb")) do |c|
           Rails.configuration.cache_classes ? require(c) : load(c)
@@ -46,10 +46,10 @@ module Spree
       end
 
       def self.prepare_frontend
-        Rails.application.config.assets.precompile += %w[
-          lib/assets/javascripts/spree/frontend/solidus_auth.js
-          lib/assets/javascripts/spree/frontend/solidus_auth.css
-        ]
+        # Rails.application.config.assets.precompile += %w[
+        #   lib/assets/javascripts/spree/frontend/solidus_auth.js
+        #   lib/assets/javascripts/spree/frontend/solidus_auth.css
+        # ]
 
         Dir.glob(File.join(File.dirname(__FILE__), "../../controllers/frontend/*/*_decorator*.rb")) do |c|
           Rails.configuration.cache_classes ? require(c) : load(c)
